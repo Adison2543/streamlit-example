@@ -23,11 +23,11 @@ st.write("If you have successfully uploaded the image. Please press the 'Process
 clicked = st.button("Process")
 
 
-progress_text = "Progress status"
-my_bar = st.progress(0, text=progress_text)
 if (clicked) :
     st.cache_data.clear()
     st.cache_resource.clear()
+    progress_text = "Progress status"
+    my_bar = st.progress(0, text=progress_text)
     progress_text = "Operation in progress. Please wait."
     for i in range(100):
         time.sleep(0.1)
