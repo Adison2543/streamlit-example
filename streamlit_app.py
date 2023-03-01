@@ -16,7 +16,7 @@ The system will then show you the results and details below.
 img = st.file_uploader("First!. Please Upload an X-ray Image to detect a caries spot")
 if (img) :
     st.write("Example image:")
-    st.image(img, width=400)
+    st.image(img, width=300)
     
     
 st.write("If you have successfully uploaded the image. Please press the 'Process' button to evaluate.")
@@ -39,18 +39,8 @@ if (clicked) :
             """
             # Result
             """
-            
-            
-            chart_data = pd.DataFrame(
-                np.random.randn(100,2),
-                columns=["Accuracy", "Loss"]
-            )
-            st.write("Display a line chart of Accuracy and Loss of result")
-            st.line_chart(chart_data)
-
 
             st.image("https://cdn.discordapp.com/attachments/886148973386162196/1080421305893011476/resEx.png")
-
 
             st.write("Display a Accuracy and Loss of each class")
             col1, col2, col3, col4 = st.columns(4)
@@ -58,6 +48,13 @@ if (clicked) :
             col2.metric("Enamel", "78%", "- loss = 20%")
             col3.metric("Pulp", "80%", "- loss = 20%")
             col4.metric("Tooth", "70%", "- loss = 20%")
+            
+            chart_data = pd.DataFrame(
+                np.random.randn(100,2),
+                columns=["Accuracy", "Loss"]
+            )
+            st.write("Display a line chart of Accuracy and Loss of result")
+            st.line_chart(chart_data)
             
         clicked_reset = st.button("Reset")
         if (clicked_reset):
