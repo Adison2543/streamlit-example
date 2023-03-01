@@ -8,10 +8,15 @@ import streamlit as st
 
 Welcome to Caries Detection AI. A web application that allows you to detect caries from x-ray images.
 
-With CarieDetect, simply upload your x-ray image. Our machine learning algorithms analyze the image and highlighting any caries spots.
+With Carie Detection, simply upload your x-ray image. Our machine learning algorithms analyze the image and highlighting any caries spots.
 The system will then show you the results and details below.
 """
 
 img = st.file_uploader("First!. Please Upload an X-ray Image to detect a caries spot")
 
 
+st.write(pd.DataFrame({
+    'Class': ['caries', 'enamel', 'pulp', 'tooth'],
+    'Accuracy': [0.57,0.78,0.80,0.75],
+    'Loss' : [1.7,0.5,0.3,0.4]
+}))
