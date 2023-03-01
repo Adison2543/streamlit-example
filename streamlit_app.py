@@ -16,7 +16,7 @@ img = st.file_uploader("First!. Please Upload an X-ray Image to detect a caries 
 
 chart_data = pd.DataFrame(
     np.random.randn(20,3),
-    columns=['accuracy', 'loss']
+    columns=["accuracy", "loss"]
 )
 st.line_chart(chart_data)
 
