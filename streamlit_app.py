@@ -17,14 +17,12 @@ img = st.file_uploader("First!. Please Upload an X-ray Image to detect a caries 
 if (img) :
     st.write("Example image:")
     st.image(img, width=400)
-
-
-st.write("If you have successfully uploaded the image. Please press the 'Process' button to evaluate.")
-clicked = st.button("Process")
-
-
-progress_text = "Progress status"
-my_bar = st.progress(0, text=progress_text)
+    st.write("If you have successfully uploaded the image. Please press the 'Process' button to evaluate.")
+    clicked = st.button("Process")
+    progress_text = "Progress status"
+    my_bar = st.progress(0, text=progress_text)
+    
+    
 if (clicked) :
     st.cache_data.clear()
     st.cache_resource.clear()
