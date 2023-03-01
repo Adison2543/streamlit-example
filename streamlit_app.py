@@ -23,43 +23,44 @@ st.write("If you have successfully uploaded the image. Please press the 'Process
 clicked = st.button("Process")
 
 
-if (clicked & img) :
-    st.cache_data.clear()
-    st.cache_resource.clear()
-    progress_text = "Progress status"
-    my_bar = st.progress(0, text=progress_text)
-    progress_text = "Operation in progress. Please wait."
-    for i in range(100):
-        time.sleep(0.1)
-        my_bar.progress(i + 1, text=progress_text)
-           
-    st.write("✔️ Done!")
-    with st.expander("See result"):
-        """
-        # Result
-        """
-        
-        
-        chart_data = pd.DataFrame(
-            np.random.randn(100,2),
-            columns=["Accuracy", "Loss"]
-        )
-        st.write("Display a line chart of Accuracy and Loss of result")
-        st.line_chart(chart_data)
+if (clicked) :
+    if (img) :
+        st.cache_data.clear()
+        st.cache_resource.clear()
+        progress_text = "Progress status"
+        my_bar = st.progress(0, text=progress_text)
+        progress_text = "Operation in progress. Please wait."
+        for i in range(100):
+            time.sleep(0.1)
+            my_bar.progress(i + 1, text=progress_text)
+            
+        st.write("✔️ Done!")
+        with st.expander("See result"):
+            """
+            # Result
+            """
+            
+            
+            chart_data = pd.DataFrame(
+                np.random.randn(100,2),
+                columns=["Accuracy", "Loss"]
+            )
+            st.write("Display a line chart of Accuracy and Loss of result")
+            st.line_chart(chart_data)
 
 
-        st.image("https://cdn.discordapp.com/attachments/886148973386162196/1080421305893011476/resEx.png")
+            st.image("https://cdn.discordapp.com/attachments/886148973386162196/1080421305893011476/resEx.png")
 
 
-        st.write("Display a Accuracy and Loss of each class")
-        col1, col2, col3, col4 = st.columns(4)
-        col1.metric("Caries", "55%", "- loss = 50%")
-        col2.metric("Enamel", "78%", "- loss = 20%")
-        col3.metric("Pulp", "80%", "- loss = 20%")
-        col4.metric("Tooth", "70%", "- loss = 20%")
-        
-    clicked_reset = st.button("Reset")
-    if (clicked_reset):
-        st.experimental_rerun()
-else:
-    st.error("Please upload your X-ray image")
+            st.write("Display a Accuracy and Loss of each class")
+            col1, col2, col3, col4 = st.columns(4)
+            col1.metric("Caries", "55%", "- loss = 50%")
+            col2.metric("Enamel", "78%", "- loss = 20%")
+            col3.metric("Pulp", "80%", "- loss = 20%")
+            col4.metric("Tooth", "70%", "- loss = 20%")
+            
+        clicked_reset = st.button("Reset")
+        if (clicked_reset):
+            st.experimental_rerun()
+    else:
+        st.error("Please upload your X-ray image")
