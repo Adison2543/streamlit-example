@@ -15,7 +15,8 @@ The system will then show you the results and details below.
 
 img = st.file_uploader("First!. Please Upload an X-ray Image to detect a caries spot")
 st.write("Example image")
-st.image(img, caption='Your uploaded image')
+if (img) :
+    st.image(img, caption='Your uploaded image')
 
 st.write("If you have successfully uploaded the image. Please press the 'Process' button to evaluate.")
 clicked = st.button("Process")
