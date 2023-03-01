@@ -15,8 +15,8 @@ The system will then show you the results and details below.
 img = st.file_uploader("First!. Please Upload an X-ray Image to detect a caries spot")
 
 chart_data = pd.DataFrame(
-    np.random.randn(20,3),
-    columns=['a', 'b', 'c']
+    np.random.randn(20,2),
+    columns=["Accuracy", "Loss"]
 )
 st.line_chart(chart_data)
 
