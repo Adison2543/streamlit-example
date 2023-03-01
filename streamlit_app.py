@@ -13,7 +13,7 @@ The system will then show you the results and details below.
 """
 
 img = st.file_uploader("First!. Please Upload an X-ray Image to detect a caries spot")
-st.write("\n")
+st.write("\n \n")
 chart_data = pd.DataFrame(
     np.random.randn(100,2),
     columns=["Accuracy", "Loss"]
@@ -21,14 +21,7 @@ chart_data = pd.DataFrame(
 st.write("Display a line chart of Accuracy and Loss of result")
 st.line_chart(chart_data)
 
-
-
-st.write(pd.DataFrame({
-    'Class': ['caries', 'enamel', 'pulp', 'tooth'],
-    'Accuracy': [0.57,0.78,0.80,0.75],
-    'Loss' : [1.7,0.5,0.3,0.4]
-}))
-
+st.write("Display a Accuracy and Loss of each class")
 col1, col2, col3, col4 = st.columns(4)
 col1.metric("Caries", "55%", "- loss = 50%")
 col2.metric("Enamel", "78%", "- loss = 20%")
