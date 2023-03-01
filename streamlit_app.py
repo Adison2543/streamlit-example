@@ -22,7 +22,7 @@ st.write(pd.DataFrame({
 }))
 
 col1, col2, col3, col4 = st.columns(4)
-col1.metric("caries", "55%", "-loss = 50%")
-col2.metric("enamel", "78%", "-loss = 20%")
-col3.metric("pulp", "80%", "-loss = 20%")
-col4.metric("tooth", "70%", "-loss = 20%")
+col1.metric("Caries", "55%", "- loss = 50%")
+col2.metric("Enamel", "78%", "- loss = 20%")
+col3.metric("Pulp", "80%", "- loss = 20%")
+col4.metric("Tooth", "70%", "- loss = 20%")
