@@ -34,7 +34,7 @@ if (clicked) :
             time.sleep(0.1)
             my_bar.progress(i + 1, text=progress_text)
             
-        st.write("✔️ Done!")
+        st.success("✔️ Done!")
         with st.expander("See result"):
             """
             # Result
@@ -63,4 +63,4 @@ if (clicked) :
         if (clicked_reset):
             st.experimental_rerun()
     else:
-        st.error("Please upload your X-ray image")
+        st.warning("Please upload your X-ray image")
