@@ -20,12 +20,13 @@ clicked = st.button("Process")
 progress_text = "Progress status"
 my_bar = st.progress(0, text=progress_text)
 if (clicked) :
+    st.cache_data.clear()
     progress_text = "Operation in progress. Please wait."
     for i in range(100):
         time.sleep(0.1)
         my_bar.progress(i + 1, text=progress_text)
            
-    st.write("✔️ successfuly")
+    st.write("✔️ Done!")
 
 with st.expander("See result"):
     """
