@@ -1,6 +1,6 @@
 from collections import namedtuple
 import altair as alt
-import math
+import numpy as np
 import pandas as pd
 import streamlit as st
 """
@@ -13,6 +13,13 @@ The system will then show you the results and details below.
 """
 
 img = st.file_uploader("First!. Please Upload an X-ray Image to detect a caries spot")
+
+chart_data = pd.DataFrame(
+    np.random.randn(100,100),
+    columns=['accuracy', 'loss']
+)
+st.line_chart(chart_data)
+
 
 
 st.write(pd.DataFrame({
