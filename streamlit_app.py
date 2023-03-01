@@ -58,6 +58,6 @@ if (clicked) :
         col3.metric("Pulp", "80%", "- loss = 20%")
         col4.metric("Tooth", "70%", "- loss = 20%")
         
-clicked_reset = st.button("Reset")
-if (clicked_reset):
-    st.experimental_rerun()
+    clicked_reset = st.button("Reset")
+    if (clicked_reset):
+        st.experimental_rerun()
