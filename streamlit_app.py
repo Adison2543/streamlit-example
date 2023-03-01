@@ -4,14 +4,12 @@ import math
 import pandas as pd
 import streamlit as st
 """
-# Welcome to Caries Detection!
+#Caries Detection AI!
 
-Edit `/streamlit_app.py` to customize this app to your heart's desire :heart:
+Welcome to Caries Detection AI. A web application that allows you to detect caries from x-ray images.
 
-If you have any questions, checkout our [documentation](https://docs.streamlit.io) and [community
-forums](https://discuss.streamlit.io).
-
-In the meantime, below is an example of what you can do with just a few lines of code:
+With CarieDetect, simply upload your x-ray image. Our machine learning algorithms analyze the image and highlighting any caries spots.
+The system will then show you the results and details below.
 """
 img = st.file_uploader("Upload an X-ray Image")
 
