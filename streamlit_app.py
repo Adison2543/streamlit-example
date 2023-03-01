@@ -13,11 +13,12 @@ The system will then show you the results and details below.
 """
 
 img = st.file_uploader("First!. Please Upload an X-ray Image to detect a caries spot")
-
+st.write("\n")
 chart_data = pd.DataFrame(
     np.random.randn(100,2),
     columns=["Accuracy", "Loss"]
 )
+st.write("Display a line chart of Accuracy and Loss of result")
 st.line_chart(chart_data)
 
 
