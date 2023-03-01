@@ -24,6 +24,8 @@ clicked = st.button("Process")
 
 
 if (clicked) :
+    if (img) == False :
+        st.error("Please upload your X-ray image")
     st.cache_data.clear()
     st.cache_resource.clear()
     progress_text = "Progress status"
