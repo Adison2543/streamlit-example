@@ -25,7 +25,7 @@ if (clicked) :
         time.sleep(0.1)
         my_bar.progress(i + 1, text=progress_text)
            
-    my_bar.empty
+    st.write("✔️ successfuly")
 
 with st.expander("See result"):
     """
