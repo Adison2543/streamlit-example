@@ -5,7 +5,7 @@ import pandas as pd
 import streamlit as st
 
 """
-# Welcome to Adison Web App!
+# Welcome to Caries Detection!
 
 Edit `/streamlit_app.py` to customize this app to your heart's desire :heart:
 
