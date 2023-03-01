@@ -18,8 +18,11 @@ if (img) :
     st.write("Example image:")
     st.image(img, width=400)
 
+
 st.write("If you have successfully uploaded the image. Please press the 'Process' button to evaluate.")
 clicked = st.button("Process")
+
+
 progress_text = "Progress status"
 my_bar = st.progress(0, text=progress_text)
 if (clicked) :
@@ -54,3 +57,7 @@ if (clicked) :
         col2.metric("Enamel", "78%", "- loss = 20%")
         col3.metric("Pulp", "80%", "- loss = 20%")
         col4.metric("Tooth", "70%", "- loss = 20%")
+        
+clicked_reset = st.button("Reset")
+if (clicked_reset):
+    st.experimental_rerun()
