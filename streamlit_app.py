@@ -17,14 +17,15 @@ img = st.file_uploader("First!. Please Upload an X-ray Image to detect a caries 
 
 st.write("If you have successfully uploaded the image. Please press the 'Process' button to evaluate.")
 clicked = st.button("Process")
-progress_text = "Operation in progress. Please wait."
+progress_text = "Progress status"
 my_bar = st.progress(0, text=progress_text)
 if (clicked) :
+    progress_text = "Operation in progress. Please wait."
     for i in range(100):
         time.sleep(0.1)
         my_bar.progress(i + 1, text=progress_text)
            
-
+    my_bar.empty
 
 with st.expander("See result"):
     """
