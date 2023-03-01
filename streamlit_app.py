@@ -23,9 +23,7 @@ st.write("If you have successfully uploaded the image. Please press the 'Process
 clicked = st.button("Process")
 
 
-if (clicked) :
-    if (img) == False :
-        st.error("Please upload your X-ray image")
+if (clicked & img) :
     st.cache_data.clear()
     st.cache_resource.clear()
     progress_text = "Progress status"
@@ -63,3 +61,5 @@ if (clicked) :
     clicked_reset = st.button("Reset")
     if (clicked_reset):
         st.experimental_rerun()
+else:
+    st.error("Please upload your X-ray image")
