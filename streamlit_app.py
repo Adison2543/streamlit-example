@@ -20,3 +20,9 @@ st.write(pd.DataFrame({
     'Accuracy': [0.57,0.78,0.80,0.75],
     'Loss' : [1.7,0.5,0.3,0.4]
 }))
+
+col1, col2, col3, col4 = st.columns(3)
+col1.metric("caries", "55%", "loss = 50%")
+col2.metric("enamel", "78%", "loss = 20%")
+col3.metric("pulp", "80%", "loss = 20%")
+col4.metric("tooth", "70%", "loss = 20%")
