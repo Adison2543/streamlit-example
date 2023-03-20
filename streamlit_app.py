@@ -18,7 +18,7 @@ colInput, colRes = st.columns(2)
 with colInput:
     if (img) :
         st.write("Example image:")
-        st.image(img, width=300)
+        st.image(img, width=500)
 
 
 
@@ -38,7 +38,7 @@ if (clicked) :
         with colRes:
             st.write("Result image:")
             st.image("https://cdn.discordapp.com/attachments/886148973386162196/1080421305893011476/resEx.png"
-                     , width=300)
+                     , width=500)
         
         with st.expander("See result"):
             """
