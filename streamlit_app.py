@@ -36,6 +36,7 @@ if (clicked) :
             
         st.success("✔️ Done!")
         with colRes:
+            st.write("Result image:")
             st.image("https://cdn.discordapp.com/attachments/886148973386162196/1080421305893011476/resEx.png"
                      , width=300)
         
