@@ -12,13 +12,15 @@ Welcome to Caries Detection AI. A web application that allows you to detect cari
 With Carie Detection, simply upload your x-ray image. Our machine learning algorithms analyze the image and highlighting any caries spots.
 The system will then show you the results and details below.
 """
-
+colInput, colRes = st.columns(2)
 img = st.file_uploader("First!. Please Upload an X-ray Image to detect a caries spot")
-if (img) :
-    st.write("Example image:")
-    st.image(img, width=300)
-    
-    
+with colInput:
+    if (img) :
+        st.write("Example image:")
+        st.image(img, width=300)
+
+
+
 st.write("If you have successfully uploaded the image. Please press the 'Process' button to evaluate.")
 clicked = st.button("Process")
 
@@ -32,8 +34,9 @@ if (clicked) :
             my_bar.progress(i + 1, text=progress_text)
             
         st.success("✔️ Done!")
-        
-        st.image("https://cdn.discordapp.com/attachments/886148973386162196/1080421305893011476/resEx.png")
+        with colRes:
+            st.image("https://cdn.discordapp.com/attachments/886148973386162196/1080421305893011476/resEx.png"
+                     , width=300)
         
         with st.expander("See result"):
             """
