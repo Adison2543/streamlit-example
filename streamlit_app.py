@@ -13,7 +13,7 @@ With Carie Detection, simply upload your x-ray image. Our machine learning algor
 The system will then show you the results and details below.
 """
 
-img = st.file_uploader("First!. Please Upload an X-ray Image to detect a caries spot")
+img = st.sidebar.file_uploader("First!. Please Upload an X-ray Image to detect a caries spot")
 if (img) :
     st.write("Example image:")
     st.image(img, width=300)
@@ -59,6 +59,7 @@ if (clicked) :
             st.cache_data.clear()
             st.cache_resource.clear()
             st.experimental_rerun()
+            
    
     else:
         st.warning("Please upload your X-ray image")
