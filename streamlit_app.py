@@ -18,7 +18,7 @@ colInput, colRes = st.columns(2)
 with colInput:
     if (img) :
         st.write("Example image:")
-        st.image(img, width=500)
+        st.image(img, width=400)
 
 
 
