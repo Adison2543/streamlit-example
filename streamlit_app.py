@@ -4,6 +4,12 @@ import altair as alt
 import numpy as np
 import pandas as pd
 import streamlit as st
+from tensorflow import keras
+from keras.models import load_model
+import numpy as np
+import tensorflow as tf
+import cv2
+from keras.utils import normalize
 """
 # Caries Detection AI!
 
@@ -20,7 +26,30 @@ with colInput:
         st.write("Example image:")
         st.image(img, width=350)
 
+def predictnow(image):
+    #Resizing images, if needed
+    SIZE_X = 128 
+    SIZE_Y = 128
+    train_images = []
 
+    img = image
+    img = cv2.resize(img, (SIZE_Y, SIZE_X))
+    train_images.append(img)
+
+    train_images = np.array(train_images)
+    train_images = np.expand_dims(train_images, axis=3)
+    train_images = normalize(train_images, axis=1)
+
+    load_model = keras.models.load_model("unet_caries.h5")
+    load_model.load_weights('test.hdf5')
+
+    test_img_number = 0
+    test_img = train_images[test_img_number]
+    test_img_norm=test_img[:,:,0][:,:,None]
+    test_img_input=np.expand_dims(test_img_norm, 0)
+    prediction = (load_model.predict(test_img_input))
+    predicted_img=np.argmax(prediction, axis=3)[0,:,:]
+    return predicted_img
 
 st.write("If you have successfully uploaded the image. Please press the 'Process' button to evaluate.")
 clicked = st.button("Process")
@@ -33,12 +62,14 @@ if (clicked) :
         for i in range(100):
             time.sleep(0.05)
             my_bar.progress(i + 1, text=progress_text)
-            
+        #Tensorflow Graph
+        resImg = predictnow(img)
+        
+        
         st.success("✔️ Done!")
         with colRes:
             st.write("Result image:")
-            st.image("https://cdn.discordapp.com/attachments/886148973386162196/1080421305893011476/resEx.png"
-                     , width=350)
+            st.image(resImg, width=350)
         
         with st.expander("See result"):
             """
@@ -70,3 +101,5 @@ if (clicked) :
    
     else:
         st.warning("Please upload your X-ray image")
+        
+        
