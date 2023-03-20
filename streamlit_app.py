@@ -47,7 +47,7 @@ if (clicked) :
 
             
 
-            st.write("Display a Accuracy and Loss of each class")
+            st.write("Display an Accuracy and Loss of each class")
             col1, col2, col3, col4 = st.columns(4)
             col1.metric("Caries", "55%", "- loss = 50%")
             col2.metric("Enamel", "78%", "- loss = 20%")
