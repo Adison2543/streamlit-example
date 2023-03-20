@@ -25,8 +25,6 @@ clicked = st.button("Process")
 
 if (clicked) :
     if (img) :
-        st.cache_data.clear()
-        st.cache_resource.clear()
         progress_text = "Progress status"
         my_bar = st.progress(0, text=progress_text)
         progress_text = "Operation in progress. Please wait."
@@ -58,6 +56,9 @@ if (clicked) :
             
         clicked_reset = st.button("Reset")
         if (clicked_reset):
+            st.cache_data.clear()
+            st.cache_resource.clear()
             st.experimental_rerun()
+   
     else:
         st.warning("Please upload your X-ray image")
