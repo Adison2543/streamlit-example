@@ -1,10 +1,8 @@
 from collections import namedtuple
 import time
-import altair as alt
 import numpy as np
 import pandas as pd
 import streamlit as st
-from tensorflow import keras
 from keras.models import load_model
 import numpy as np
 import tensorflow as tf
@@ -40,7 +38,7 @@ def predictnow(image):
     train_images = np.expand_dims(train_images, axis=3)
     train_images = normalize(train_images, axis=1)
 
-    load_model = keras.models.load_model("unet_caries.h5", compile=False)
+    load_model = load_model("unet_caries.h5", compile=False)
     load_model.load_weights('test.hdf5', compile=False)
 
     test_img_number = 0
