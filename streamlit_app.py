@@ -40,8 +40,8 @@ def predictnow(image):
     train_images = np.expand_dims(train_images, axis=3)
     train_images = normalize(train_images, axis=1)
 
-    load_model = keras.models.load_model("unet_caries.h5")
-    load_model.load_weights('test.hdf5')
+    load_model = keras.models.load_model("unet_caries.h5", compile=False)
+    load_model.load_weights('test.hdf5', compile=False)
 
     test_img_number = 0
     test_img = train_images[test_img_number]
