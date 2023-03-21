@@ -8,6 +8,8 @@ import numpy as np
 import tensorflow as tf
 import cv2
 from keras.utils import normalize
+from PIL import Image
+from simple_multi_unet_model import multi_unet_model
 """
 # Caries Detection AI!
 
@@ -24,30 +26,29 @@ with colInput:
         st.write("Example image:")
         st.image(img, width=350)
 
-def predictnow(image):
+modeler = load_model('unet_caries.h5')
+modeler.load_weights('test.hdf5')
+
+def predictnow(img):
     #Resizing images, if needed
     SIZE_X = 128 
     SIZE_Y = 128
     train_images = []
-
-    img = image
-    img = cv2.resize(img, (SIZE_Y, SIZE_X))
-    train_images.append(img)
-
-    train_images = np.array(train_images)
-    train_images = np.expand_dims(train_images, axis=3)
+    image2 = np.array(img)/255.0
+    img3 = cv2.resize(image2, (SIZE_Y, SIZE_X),interpolation=cv2.INTER_CUBIC)
+    colRes.write(img3.shape)
+    test_img_norm=img3[:,:,0][:,:,None]
+#    train_images = np.array(train_images)
+    train_images = np.expand_dims(test_img_norm, axis=3)
     train_images = normalize(train_images, axis=1)
-
-    load_model = load_model("unet_caries.h5", compile=False)
-    load_model.load_weights('test.hdf5', compile=False)
-
-    test_img_number = 0
-    test_img = train_images[test_img_number]
-    test_img_norm=test_img[:,:,0][:,:,None]
-    test_img_input=np.expand_dims(test_img_norm, 0)
-    prediction = (load_model.predict(test_img_input))
+    colRes.write(train_images.shape)
+#    test_img_number = 0
+#    test_img = train_images[test_img_number]
+#    test_img_norm=test_img[:,:,0][:,:,None]
+#    test_img_input=np.expand_dims(test_img_norm, 0)
+    prediction = modeler.predict(train_images[0])
     predicted_img=np.argmax(prediction, axis=3)[0,:,:]
-    return predicted_img
+    return 
 
 st.write("If you have successfully uploaded the image. Please press the 'Process' button to evaluate.")
 clicked = st.button("Process")
@@ -57,11 +58,12 @@ if (clicked) :
         progress_text = "Progress status"
         my_bar = st.progress(0, text=progress_text)
         progress_text = "Operation in progress. Please wait."
-        for i in range(100):
+        for i in range(50):
             time.sleep(0.05)
             my_bar.progress(i + 1, text=progress_text)
         #Tensorflow Graph
-        resImg = predictnow(img)
+        image = Image.open(img).convert('RGB')
+        resImg = predictnow(image)
         
         
         st.success("✔️ Done!")
