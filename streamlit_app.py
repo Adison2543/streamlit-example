@@ -3,11 +3,11 @@ import time
 import numpy as np
 import pandas as pd
 import streamlit as st
-from keras.models import load_model
+# from keras.models import load_model
 import numpy as np
 import tensorflow as tf
 import cv2
-from keras.utils import normalize
+# from tensorflow.keras import normalize
 from PIL import Image
 from simple_multi_unet_model import multi_unet_model
 """
@@ -26,8 +26,8 @@ with colInput:
         st.write("Example image:")
         st.image(img, width=350)
 
-modeler = load_model('unet_caries.h5')
-modeler.load_weights('test.hdf5')
+modeler = tf.keras.Model.load_weights('unet_caries.h5')
+# modeler.load_weights('test.hdf5')
 
 def predictnow(img):
     #Resizing images, if needed
@@ -40,7 +40,7 @@ def predictnow(img):
     test_img_norm=img3[:,:,0][:,:,None]
 #    train_images = np.array(train_images)
     train_images = np.expand_dims(test_img_norm, axis=3)
-    train_images = normalize(train_images, axis=1)
+    train_images = tf.keras.utils.normalize(train_images, axis=1)
     colRes.write(train_images.shape)
 #    test_img_number = 0
 #    test_img = train_images[test_img_number]
