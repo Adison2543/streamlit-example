@@ -37,10 +37,13 @@ def predictnow(img):
     image2 = np.array(img)/255.0
     img3 = cv2.resize(image2, (SIZE_Y, SIZE_X),interpolation=cv2.INTER_CUBIC)
     colRes.write(img3.shape)
-    test_img_norm=img3[:,:,0][:,:,None]
+    # test_img_norm=img3[:,:,0][:,:,None]
 #    train_images = np.array(train_images)
-    train_images = np.expand_dims(test_img_norm, axis=3)
+    train_images = np.array(img3)
+    train_images = np.expand_dims(train_images, axis=3)
     train_images = tf.keras.utils.normalize(train_images, axis=1)
+    # train_images = np.expand_dims(test_img_norm, axis=3)
+    # train_images = tf.keras.utils.normalize(train_images, axis=1)
     colRes.write(train_images.shape)
 #    test_img_number = 0
 #    test_img = train_images[test_img_number]
@@ -48,7 +51,7 @@ def predictnow(img):
 #    test_img_input=np.expand_dims(test_img_norm, 0)
     prediction = modeler.predict(train_images[0])
     predicted_img=np.argmax(prediction, axis=3)[0,:,:]
-    return 
+    return  predicted_img
 
 st.write("If you have successfully uploaded the image. Please press the 'Process' button to evaluate.")
 clicked = st.button("Process")
