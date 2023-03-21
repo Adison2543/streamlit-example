@@ -26,7 +26,7 @@ with colInput:
         st.write("Example image:")
         st.image(img, width=350)
 
-modeler = tf.keras.Model.load_weights('unet_caries.h5')
+modeler = tf.keras.models.load_model('unet_caries.h5')
 # modeler.load_weights('test.hdf5')
 
 def predictnow(img):
