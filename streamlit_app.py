@@ -27,7 +27,7 @@ with colInput:
         st.image(img, width=350)
 
 modeler = tf.keras.models.load_model('unet_caries.h5')
-# modeler.load_weights('test.hdf5')
+modeler.load_weights('test.hdf5')
 
 def predictnow(img):
     #Resizing images, if needed
@@ -49,7 +49,9 @@ def predictnow(img):
 #    test_img = train_images[test_img_number]
 #    test_img_norm=test_img[:,:,0][:,:,None]
 #    test_img_input=np.expand_dims(test_img_norm, 0)
-    prediction = modeler.predict(train_images[0])
+    test_img_norm=train_images[:,:,0][:,:,None]
+    test_img_input=np.expand_dims(test_img_norm, 0)
+    prediction = (modeler.predict(test_img_input))
     predicted_img=np.argmax(prediction, axis=3)[0,:,:]
     return  predicted_img
 
