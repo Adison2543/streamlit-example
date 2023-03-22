@@ -6,6 +6,7 @@ import numpy as np
 import tensorflow as tf
 import cv2
 from PIL import Image
+from matplotlib import pyplot as plt
 """
 # Caries Detection AI!
 
@@ -32,23 +33,14 @@ def predictnow(img):
     train_images = []
     image2 = np.array(img)/255.0
     img3 = cv2.resize(image2, (SIZE_Y, SIZE_X),interpolation=cv2.INTER_CUBIC)
-    # test_img_norm=img3[:,:,0][:,:,None]
-#    train_images = np.array(train_images)
     train_images = np.array(img3)
     train_images = np.expand_dims(train_images, axis=3)
     train_images = tf.keras.utils.normalize(train_images, axis=1)
-    # train_images = np.expand_dims(test_img_norm, axis=3)
-    # train_images = tf.keras.utils.normalize(train_images, axis=1)
-#    test_img_number = 0
-#    test_img = train_images[test_img_number]
-#    test_img_norm=test_img[:,:,0][:,:,None]
-#    test_img_input=np.expand_dims(test_img_norm, 0)
     test_img_norm=train_images[:,:,0][:,:,None]
     test_img_input=np.expand_dims(test_img_norm, 0)
     prediction = (modeler.predict(test_img_input))
     predicted_img=np.argmax(prediction, axis=3)[0,:,:]
-    predicted_img = cv2.cvtColor(predicted_img, cv2.COLOR_GRAY2RGB)
-    return  predicted_img
+    return  plt.imshow(predicted_img, cmap='jet')
 
 st.write("If you have successfully uploaded the image. Please press the 'Process' button to evaluate.")
 clicked = st.button("Process")
