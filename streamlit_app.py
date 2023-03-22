@@ -75,7 +75,7 @@ if (clicked) :
             - Each image has dimensions of 128x128x3.
             - Loss function is "binary crossentropy"
             - Optimizer is "Adam Optimizer"
-            - The number of training sessions is 100 epoch.
+            - The number of training sessions is 50 epoch.
             - Learning rate is 0.001(10^-3)
             - Batch size equal to 16
             """
