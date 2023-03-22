@@ -68,7 +68,9 @@ if (clicked) :
             with col1:
                 st.image("images/Acc.png")
                 st.metric("Model Accuracy", "77.14%")
-            col2.metric("Model loss", "96.28%")
+            with col2:
+                st.image("images/loss.png")
+                st.metric("Model loss", "96.28%")
             
             chart_data = pd.DataFrame(
                 np.random.randn(100,2),
