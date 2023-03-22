@@ -39,7 +39,6 @@ def predictnow(img):
     test_img_input=np.expand_dims(test_img_norm, 0)
     prediction = (modeler.predict(test_img_input))
     predicted_img=np.argmax(prediction, axis=3)[0,:,:]
-    colRes.write(modeler.predict(test_img_input))
     my_cm = plt.cm.get_cmap('gist_rainbow')
     mapped_data = my_cm(predicted_img)
     return  mapped_data
