@@ -21,7 +21,6 @@ with colInput:
     if (img) :
         st.write("Example image:")
         st.image(img, width=350)
-
 modeler = tf.keras.models.load_model('unet_caries.h5')
 modeler.load_weights('test.hdf5')
 
@@ -55,7 +54,7 @@ if (clicked) :
 
         st.success("✔️ Done!")
         with colRes:
-            st.write("Result image: " + img.type)
+            st.write("Result image: ")
             st.image(resImg, width=350)
         
         with st.expander("About this model"):
