@@ -54,7 +54,7 @@ if (clicked) :
         resImg = predictnow(image)
         resImg = np.reshape(resImg, (256, 256))
         res = Image.fromarray(resImg)
-        res = Image.paste(image, mask = resImg)
+        res = image.paste(res, mask = res)
         
         
 
