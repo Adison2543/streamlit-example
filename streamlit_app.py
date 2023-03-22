@@ -80,7 +80,7 @@ if (clicked) :
             - Batch size equal to 16
             
             """
-            st.write("\nResult:")
+            st.write("Result:")
             st.write("An accuracy and Loss of this AI model")
             col1, col2 = st.columns(2)
             with col1:
