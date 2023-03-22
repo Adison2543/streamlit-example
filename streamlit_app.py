@@ -1,4 +1,3 @@
-import time
 import numpy as np
 import pandas as pd
 import streamlit as st
@@ -40,7 +39,10 @@ def predictnow(img):
     test_img_input=np.expand_dims(test_img_norm, 0)
     prediction = (modeler.predict(test_img_input))
     predicted_img=np.argmax(prediction, axis=3)[0,:,:]
-    return  plt.imshow(predicted_img, cmap='jet')
+    my_cm = plt.cm.get_cmap('Reds')
+    mapped_data = my_cm(predicted_img)
+    return  mapped_data
+
 
 st.write("If you have successfully uploaded the image. Please press the 'Process' button to evaluate.")
 clicked = st.button("Process")
