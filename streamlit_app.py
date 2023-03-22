@@ -19,7 +19,7 @@ img = st.file_uploader("First!. Please Upload an X-ray Image to detect a caries 
 colInput, colRes = st.columns(2)
 with colInput:
     if (img) :
-        st.write("Example image:")
+        st.write("Input image:")
         st.image(img, width=350)
 modeler = tf.keras.models.load_model('unet_caries.h5')
 modeler.load_weights('test.hdf5')
