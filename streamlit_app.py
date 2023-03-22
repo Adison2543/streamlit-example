@@ -45,7 +45,9 @@ def predictnow(img):
 
 
 st.write("If you have successfully uploaded the image. Please press the 'Process' button to evaluate.")
-clicked = st.button("Process")
+colP, colR = st.columns(2)
+with colP:
+    clicked = st.button("Process")
 
 if (clicked) :
     if (img) :
@@ -88,8 +90,8 @@ if (clicked) :
             with col2:
                 st.image("images/loss.png")
                 st.metric("Model loss", "96.28%")
-            
-        clicked_reset = st.button("Reset")
+        with colR:   
+            clicked_reset = st.button("Reset")
         if (clicked_reset):
             st.cache_data.clear()
             st.cache_resource.clear()
