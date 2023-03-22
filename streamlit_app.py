@@ -68,7 +68,7 @@ if (clicked) :
         st.success("✔️ Done!")
         with colRes:
             st.write("Result image:")
-            st.image(resImg, width=300)
+            st.image(resImg, width=350)
         
         with st.expander("See result"):
             """
