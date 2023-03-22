@@ -1,15 +1,11 @@
-from collections import namedtuple
 import time
 import numpy as np
 import pandas as pd
 import streamlit as st
-# from keras.models import load_model
 import numpy as np
 import tensorflow as tf
 import cv2
-# from tensorflow.keras import normalize
 from PIL import Image
-from simple_multi_unet_model import multi_unet_model
 """
 # Caries Detection AI!
 
