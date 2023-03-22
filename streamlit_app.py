@@ -53,15 +53,15 @@ if (clicked) :
         image = Image.open(img).convert('RGB')
         resImg = predictnow(image)
         resImg = np.reshape(resImg, (256, 256))
-        res = Image.fromarray(resImg)
-        res = image.paste(res, mask = res)
+        resImg = Image.fromarray(resImg)
+       # res = image.paste(res, mask = res)
         
         
 
         st.success("✔️ Done!")
         with colRes:
             st.write("Result image:")
-            st.image(res, width=350)
+            st.image(resImg, width=350)
         
         with st.expander("See result"):
             """
