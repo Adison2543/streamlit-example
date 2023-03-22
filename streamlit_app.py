@@ -58,7 +58,7 @@ if (clicked) :
             st.write("Result image:")
             st.image(resImg, width=350)
         
-        with st.expander("See result"):
+        with st.expander("About this model"):
             """
             # About This Model
             The architecture is symmetric and consists of two major parts — the left part is called contracting path, 
