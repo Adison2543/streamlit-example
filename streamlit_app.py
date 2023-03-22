@@ -11,7 +11,7 @@ from PIL import Image
 
 Welcome to Caries Detection AI. A web application that allows you to detect caries from x-ray images.
 
-    With Carie Detection, simply upload your x-ray image. Our machine learning algorithms analyze the image and highlighting any caries spots.
+   With Carie Detection, simply upload your x-ray image. Our machine learning algorithms analyze the image and highlighting any caries spots.
 The system will then show you the results and details below.
 """
 
