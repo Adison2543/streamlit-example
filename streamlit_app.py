@@ -54,9 +54,6 @@ clicked = st.button("Process")
 
 if (clicked) :
     if (img) :
-        progress_text = "Progress status"
-        my_bar = st.progress(0, text=progress_text)
-        progress_text = "Operation in progress. Please wait."
         #Tensorflow Graph
         image = Image.open(img).convert('RGB')
         resImg = predictnow(image)
