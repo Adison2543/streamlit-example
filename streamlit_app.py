@@ -78,10 +78,10 @@ if (clicked) :
             - The number of training sessions is 100 epoch.
             - Learning rate is 0.001(10^-3)
             - Batch size equal to 16
-            
+            \n
             Result:
             """
-            st.write("\nAccuracy and Loss of this AI model")
+            st.write("Accuracy and Loss of this AI model")
             col1, col2 = st.columns(2)
             with col1:
                 st.image("images/Acc.png")
