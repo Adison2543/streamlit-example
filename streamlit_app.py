@@ -60,14 +60,14 @@ if (clicked) :
         
         with st.expander("See result"):
             """
-            # Result
+            # About This Model
             """
-
             
-
-            st.write("Display an Accuracy and Loss of each class")
+            st.write("Accuracy and Loss of this AI model")
             col1, col2 = st.columns(2)
-            col1.metric("Model Accuracy", "77.14%")
+            with col1:
+                st.image("images/Acc.png")
+                st.metric("Model Accuracy", "77.14%")
             col2.metric("Model loss", "96.28%")
             
             chart_data = pd.DataFrame(
