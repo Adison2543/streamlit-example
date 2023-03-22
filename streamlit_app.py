@@ -81,7 +81,7 @@ if (clicked) :
             \n
             Result:
             """
-            st.write("Accuracy and Loss of this AI model")
+            st.write("An accuracy and Loss of this AI model")
             col1, col2 = st.columns(2)
             with col1:
                 st.image("images/Acc.png")
