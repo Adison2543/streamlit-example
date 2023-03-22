@@ -47,6 +47,7 @@ def predictnow(img):
     test_img_input=np.expand_dims(test_img_norm, 0)
     prediction = (modeler.predict(test_img_input))
     predicted_img=np.argmax(prediction, axis=3)[0,:,:]
+    predicted_img = cv2.cvtColor(predicted_img, cv2.COLOR_GRAY2RGB)
     return  predicted_img
 
 st.write("If you have successfully uploaded the image. Please press the 'Process' button to evaluate.")
