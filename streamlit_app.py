@@ -52,7 +52,7 @@ if (clicked) :
         #Tensorflow Graph
         image = Image.open(img).convert('RGB')
         resImg = predictnow(image)
-       # res = image.paste(res, mask = res)
+        res = image.paste(resImg, mask = resImg)
         
         
 
