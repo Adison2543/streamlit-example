@@ -52,8 +52,6 @@ if (clicked) :
         #Tensorflow Graph
         image = Image.open(img).convert('RGB')
         resImg = predictnow(image)
-        resImg = np.reshape(resImg, (256, 256))
-        resImg = Image.fromarray(resImg)
        # res = image.paste(res, mask = res)
         
         
