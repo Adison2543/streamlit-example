@@ -67,7 +67,20 @@ if (clicked) :
             """
             st.write("U-Net architecture that use in this model.")
             st.image("images/unet.png")
+            """
+            Train a multiclass U-Net architecture by running multiple experiments with different training datasets. 
+            In order to verify the performance of the deep recognition model and sub-visualization used. 
+            with various training details are as follows
+            - The Dataset is 472 image.
+            - Each image has dimensions of 128x128x3.
+            - Loss function is "binary crossentropy"
+            - Optimizer is "Adam Optimizer"
+            - The number of training sessions is 100 epoch.
+            - Learning rate is 0.001(10^-3)
+            - Batch size equal to 16
             
+            Result:
+            """
             st.write("\nAccuracy and Loss of this AI model")
             col1, col2 = st.columns(2)
             with col1:
