@@ -61,6 +61,9 @@ if (clicked) :
         with st.expander("See result"):
             """
             # About This Model
+            The architecture is symmetric and consists of two major parts — the left part is called contracting path, 
+            which is constituted by the general convolutional process; the right part is expansive path, 
+            which is constituted by transposed 2d convolutional layers
             """
             st.write("U-Net architecture that use in this model.")
             st.image("images/unet.png")
