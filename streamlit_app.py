@@ -72,7 +72,7 @@ if (clicked) :
             In order to verify the performance of the deep recognition model and sub-visualization used. 
             with various training details are as follows
             - The Dataset is 472 image.
-            - Each image has dimensions of 128x128x3.
+            - Input image has dimensions of 128x128x3.
             - Loss function is "binary crossentropy"
             - Optimizer is "Adam Optimizer"
             - The number of training sessions is 50 epoch.
