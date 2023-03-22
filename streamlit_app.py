@@ -62,8 +62,10 @@ if (clicked) :
             """
             # About This Model
             """
+            st.write("U-Net architecture that use in this model.")
+            st.image("images/unet.png")
             
-            st.write("Accuracy and Loss of this AI model")
+            st.write("\nAccuracy and Loss of this AI model")
             col1, col2 = st.columns(2)
             with col1:
                 st.image("images/Acc.png")
@@ -71,13 +73,6 @@ if (clicked) :
             with col2:
                 st.image("images/loss.png")
                 st.metric("Model loss", "96.28%")
-            
-            chart_data = pd.DataFrame(
-                np.random.randn(100,2),
-                columns=["Accuracy", "Loss"]
-            )
-            st.write("Display a line chart of Accuracy and Loss of result")
-            st.line_chart(chart_data)
             
         clicked_reset = st.button("Reset")
         if (clicked_reset):
