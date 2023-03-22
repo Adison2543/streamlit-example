@@ -50,17 +50,15 @@ clicked = st.button("Process")
 if (clicked) :
     if (img) :
         #Tensorflow Graph
-        image = Image.open(img).convert('RGB')
-        resImg = predictnow(image)
-        resImg = np.reshape(resImg, (256, 256))
-        res = image.paste(resImg, mask = resImg)
-        
+        image2 = Image.open(img).convert('RGB')
+        resImg = predictnow(image2)
+        image2.paste(resImg, (0,0), mask=resImg)
         
 
         st.success("✔️ Done!")
         with colRes:
             st.write("Result image:")
-            st.image(resImg, width=350)
+            st.image(image2, width=350)
         
         with st.expander("See result"):
             """
