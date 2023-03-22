@@ -52,13 +52,12 @@ if (clicked) :
         #Tensorflow Graph
         image2 = Image.open(img).convert('RGB')
         resImg = predictnow(image2)
-        image2.paste(resImg, (0,0), mask=resImg)
-        
+        res = Image.alpha_composite(image2,resImg)
 
         st.success("✔️ Done!")
         with colRes:
             st.write("Result image:")
-            st.image(image2, width=350)
+            st.image(res, width=350)
         
         with st.expander("See result"):
             """
