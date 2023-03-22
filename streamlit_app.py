@@ -80,7 +80,8 @@ if (clicked) :
             - Batch size equal to 16
             
             """
-            st.write("Result: \nAn accuracy and Loss of this AI model")
+            st.write("\nResult:")
+            st.write("An accuracy and Loss of this AI model")
             col1, col2 = st.columns(2)
             with col1:
                 st.image("images/Acc.png")
