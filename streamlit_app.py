@@ -55,7 +55,7 @@ if (clicked) :
 
         st.success("✔️ Done!")
         with colRes:
-            st.write("Result image:")
+            st.write("Result image: " + img.type)
             st.image(resImg, width=350)
         
         with st.expander("About this model"):
