@@ -52,8 +52,10 @@ if (clicked) :
         #Tensorflow Graph
         image = Image.open(img).convert('RGB')
         resImg = predictnow(image)
-        resImg.putalpha(45)
-        res = Image.alpha_composite(image, resImg)
+        resImg = np.reshape(resImg, (1024, 720))
+        res = Image.fromarray(resImg)
+        res = Image.alpha_composite(image, res)
+        
         
 
         st.success("✔️ Done!")
